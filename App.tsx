@@ -1,24 +1,27 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import * as React from "react";
+// import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import Hello from "./components/Hello";
+// Navigation
+import AppNavExample from "./navigator/App-NavExamples";
+import NavComponent from "./navigator/Navigators";
+import AuthScreen from "./navigator/Auth";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Home screen</Text>
+    <>
+      {/* <AuthScreen /> */}
 
-      <Hello name="John" />
-      <Hello name="Jacob" enthusiasmLevel={5} />
-    </View>
+      {/* Drawer, Bottom-Tabs, Stack Navigator demo. */}
+      {/* 1 error in red - error is caused by using Drawer Navigator. Its an open error in Git. */}
+      <NavComponent />
+
+      {/* All initial trials of react-navigation */}
+      {/* <AppNavExample /> */}
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
